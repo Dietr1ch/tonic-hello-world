@@ -1,0 +1,29 @@
+#+title: tonic's Hello World Example
+
+This is the example from [[https://github.com/hyperium/tonic/tree/master/examples/src/helloworld][hyperium/tonic:examples/src/helloworld]]
+
+To run, in two separate terminals, do:
+
+#+begin_src fish :results raw
+cargo run \
+  --bin 'server' \
+  -- \
+  --address '[::1]:50061'
+#+end_src
+
+#+RESULTS:
+Starting up server at 127.0.0.1:4030
+response: Hello, World!
+
+and
+
+#+begin_src fish :results raw
+cargo run \
+  --bin 'client' \
+  -- \
+  --server_address 'http://[::1]:50051' \
+  --name "World"
+#+end_src
+
+#+RESULTS:
+received: Hello, World!

@@ -1,0 +1,18 @@
+syntax = "proto3";
+package helloworld;
+
+service Greeter {
+    rpc SayHello (HelloRequest) returns (HelloResponse);
+}
+
+// Generates,
+// - pub struct HelloRequest
+message HelloRequest {
+  string name = 1;
+}
+
+// Generates,
+// - pub struct HelloReply
+message HelloResponse {
+  string message = 1;
+}
